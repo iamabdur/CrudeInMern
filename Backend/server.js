@@ -5,8 +5,8 @@ const app = express();
 const taskRoutes = require("./Router/taskRouter");
 const cors = require('cors')
 
-const MONGO_URI="mongodb+srv://Admin:Admin@crud.rrtgqv1.mongodb.net/?retryWrites=true&w=majority"
-const PORT=4000;
+// const MONGO_URI="mongodb+srv://Admin:Admin@crud.rrtgqv1.mongodb.net/?retryWrites=true&w=majority"
+// const PORT=4000;
 //Middleware
 
 
@@ -17,11 +17,11 @@ app.use(express.json());
 
 
 // Connect to the MongoDB database
-mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    app.listen(PORT, () => {
+    app.listen(process.env.PORT, () => {
       console.log(
-        "DB connected Successfully and listening to "+PORT
+        "DB connected Successfully and listening to "+process.env.PORT
       );
     });
   })
