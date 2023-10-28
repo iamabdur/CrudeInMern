@@ -5,9 +5,9 @@ const app = express();
 const taskRoutes = require("./Router/taskRouter");
 const cors = require('cors')
 
-// const MONGO_URI="mongodb+srv://Admin:Admin@crud.rrtgqv1.mongodb.net/?retryWrites=true&w=majority"
-// const PORT=4000;
-//Middleware
+const MONGO_URI="mongodb+srv://Admin:Admin@crud.rrtgqv1.mongodb.net/?retryWrites=true&w=majority"
+const PORT=4000;
+Middleware
 
 
 app.use(cors())
